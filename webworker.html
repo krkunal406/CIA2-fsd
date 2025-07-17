@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-300">
+
+    <div class=" w-3/4 flex items-center justify-center h-screen ">
+  <div class=" w-3/4 bg-sky-300 text-black p-4 rounded">
+    
+  <label for="email">email : </label>
+  <input type="text" id="name" placeholder="Enter email here"/>
+  <!-- <button class="saveNameBtn">Save Name</button> -->
+
+  <br />
+ <label for="product">product intrested: </label>
+  <input type="text" id="age" placeholder="product intrested"/>
+
+  <br/>
+  <button class=" border-black" id="submit">Submit</button>
+  <h1>hello</h1>
+  <h1 id="email"></h1>
+  <h2 id="product"></h2>
+  </div>
+</div>
+
+ 
+
+</body>
+<script>
+    document.getElementById("submit").addEventListener("click",(e)=>{
+        e.preventDefault();
+        const nm = document.getElementById("email").value
+        const ag = document.getElementById("product").value
+
+        localStorage.setItem("name",nm)
+        localStorage.setItem("age",ag)
+        console.log(localStorage.getItem("email"))
+        console.log(localStorage.getItem("product"))
+        document.getElementById("email").innerText = localStorage.getItem("email")
+        document.getElementById("product").innerText = localStorage.getItem("product")
+
+    })
+</script>
+</html>

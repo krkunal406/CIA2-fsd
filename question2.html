@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>search bar</title>
+</head>
+
+<body class="bg-gradient-to-r from-sky-200 via-violet-700 to-sky-200">
+
+  <nav class="bg-black text-white h-16 flex items-center justify-between px-6">
+
+    <ul class="flex space-x-8">
+      <li class="hover:underline cursor-pointer hover:text-green-300">Home</li>
+      <li class="hover:underline cursor-pointer hover:text-green-300">Cart</li>
+      <li class="hover:underline cursor-pointer hover:text-green-300">About_Us</li>
+    </ul>
+    <h2 class="text-red-400 text-center font-bold text-2xl" > WEBSITE</h2>
+   <input type="text" id="title" placeholder="Search by title..." class="text-black px-4 py-1 rounded w-64 " />
+   
+
+  </nav>
+  <div class="flex justify-center gap-4 my-4">
+    <select id="sortTitle" class="px-3 py-1 rounded">
+
+      <option value="">Sort by Title</option>
+      <option value="az">A - Z</option>
+      <option value="za">Z - A</option>
+
+    </select>
+
+    <select id="sortPrice" class="px-3 py-1 rounded">
+
+      <option value="">Sort by Price</option>
+      <option value="low">Low to High</option>
+      <option value="high">High to Low</option>
+
+    </select>
+  </div>
+
+  <div id="products" class="flex flex-wrap gap-6 justify-center px-4"></div>
+  <script src="function.js"></script>
+
+
+</body>
+</html>
