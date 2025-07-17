@@ -38,7 +38,7 @@
         
     </section>
   <!-- video  audio here -->
-    <div  class=" justify-center">
+    <div  class="flex flex-col justify-center items-center gap-4 p-6 ">
      
       <video class="w-[800px] h-[350px] rounded-lg border-4 border-gray-300 shadow-md z-0" controls muted>
         <source src="./Set1_Video.mp4"video/mp4">
@@ -50,10 +50,10 @@
         <source src="./Set1_Audio.mp3" type="audio/mpeg">
      </audio>
      
-    </div>
+    </div >
     <!-- form... -->
-
-     <div class="bg-white p-8 rounded-2xl shadow-lg w-1/2 ">
+    <div class="flex items-center justify-center">
+     <div class="bg-white p-8 rounded-2xl shadow-lg  flex items-center justify-center ">
      <form action="#" method="POST" class="space-y-5">
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
@@ -79,9 +79,26 @@
       </button>
     </form>
     </div>
+    </div>
+    
+    <div id="print" class="text-2xl"></div>
+<script>
+document.querySelector("form").addEventListener("submit",(e)=>{
+e.preventDefault();
+var email = document.querySelector("#email").value;
+var intrest = document.querySelector("#intrest").value;
+   localStorage.setItem("email", email)
+   localStorage.setItem("intrest", intrest)
 
-   
+
+   console.log(localStorage.getItem("intrest"))
+
+    var email= localStorage.getItem("email");
+    var intrest = localStorage.getItem("intrest");
+    document.querySelector("#print").innerHTML = `<div>Welcome ${email}. You were interested in ${intrest}</div>`
 
 
+})
+</script>
  </body>
 </html>
